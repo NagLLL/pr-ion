@@ -1,12 +1,12 @@
 source "amazon-ebs" "ubuntu" {
-  ami_name      = "e2esa-aws-ubuntu20"
+  ami_name      = "e2esa-aws-ubuntu"
   instance_type = "t2.micro"
   region        = "us-east-1"
   source_ami    = "ami-0c4f7023847b90238"
   ssh_username  = "ubuntu"
 
   tags = {
-    Name        = "CNR20CustomImageName"
+    Name        = "packer_ami"
     Environment = "Production"
     Application = "Tomcat"
     CustomTag   = "SomeValue"
@@ -29,7 +29,7 @@ build {
       "sudo apt-get install tomcat9-admin tomcat9-common -y",
       "sudo apt-get install tomcat9 -y",
       "cd /var/lib/tomcat9/webapps/",
-      "sudo wget https://21dec2023.s3.amazonaws.com/cnr.war",
+      "sudo wget https://21dec2023.s3.amazonaws.com/ion.war",
       "sudo systemctl start tomcat9"
     ]
   }
