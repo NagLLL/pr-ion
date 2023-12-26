@@ -20,7 +20,7 @@ build {
   ]
   provisioner "shell" {
     inline = [
-      "expect_disconnect": true
+      `"expect_disconnect"`: true
       "echo Installing Tomcat",
       "sleep 30",
       "sudo apt-get update",
