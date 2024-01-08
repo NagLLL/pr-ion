@@ -35,6 +35,5 @@ build {
     ]
   }
 
-  // Set the SSH timeout outside the inline block
   ssh_timeout = "20m"
 }
