@@ -13,11 +13,14 @@ source "amazon-ebs" "ubuntu" {
   }
 }
 
-build {
-  name = "e2esa-packer1"
-  sources = [
-    "source.amazon-ebs.ubuntu"
-  ]
+"builders": [
+  {
+    "type": "amazon-ebs",
+    "vpc_id": "vpc-05ce99dfef09616a6",
+    "subnet_id": "subnet-066fa2fc7db12b07a",
+    // Other configuration parameters...
+  }
+
   provisioner "shell" {
     inline = [
       "echo Installing Tomcat",
