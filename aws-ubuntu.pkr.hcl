@@ -6,7 +6,8 @@ source "amazon-ebs" "ubuntu" {
   ssh_username  = "ubuntu"
 
   vpc_id        = "vpc-05ce99dfef09616a6"
-  subnet_id     = "subnet-066fa2fc7db12b07a",
+  subnet_id     = "subnet-066fa2fc7db12b07a"
+  
 
   tags = {
     Name        = "packer_ami"
