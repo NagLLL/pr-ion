@@ -13,12 +13,11 @@ source "amazon-ebs" "ubuntu" {
   }
 }
 
-"builders": [
+builder 
   {
     "type": "amazon-ebs",
     "vpc_id": "vpc-05ce99dfef09616a6",
     "subnet_id": "subnet-066fa2fc7db12b07a",
-    // Other configuration parameters...
   }
 
   provisioner "shell" {
