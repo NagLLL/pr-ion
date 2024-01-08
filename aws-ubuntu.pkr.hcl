@@ -33,6 +33,8 @@ build {
       "sudo wget https://8jan2024-bucket.s3.amazonaws.com/ion.war",
       "sudo systemctl start tomcat9"
     ]
-    ssh_timeout = "20m"  # Set the SSH timeout outside the inline block
   }
+
+  // Set the SSH timeout outside the inline block
+  ssh_timeout = "20m"
 }
