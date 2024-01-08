@@ -13,7 +13,7 @@ source "amazon-ebs" "ubuntu" {
   }
 }
 
-builder 
+build
   {
     "type": "amazon-ebs",
     "vpc_id": "vpc-05ce99dfef09616a6",
