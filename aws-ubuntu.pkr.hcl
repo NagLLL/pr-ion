@@ -12,7 +12,7 @@ source "amazon-ebs" "ubuntu" {
     Name        = "packer_ami"
     Environment = "Production"
     Application = "Tomcat"
-    CustomTag   = "SomeValue"
+    CustomTag   = "SomeValu1"
   }
 }
 
