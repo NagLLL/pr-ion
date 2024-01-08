@@ -19,12 +19,13 @@ source "amazon-ebs" "ubuntu" {
 build {
   sources = ["source.amazon-ebs.ubuntu"]
 
+  ssh_timeout = "20m"
+
   provisioner "shell" {
     inline = [
       "echo Installing Tomcat",
-      "timeout 1200",
+      "(timeout 1200 sudo apt-get update)",  # Entire command within a subshell
       "sleep 30",
-      "sudo apt-get update",
       "sudo apt-get upgrade -y",
       "sudo apt-get install libtomcat9-java -y",
       "sudo apt-get update",
@@ -35,6 +36,4 @@ build {
       "sudo systemctl start tomcat9"
     ]
   }
-
-  ssh_timeout = "20m"
 }
