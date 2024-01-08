@@ -2,7 +2,7 @@ source "amazon-ebs" "ubuntu" {
   ami_name      = "e2esa-aws-ubuntu"
   instance_type = "t2.micro"
   region        = "us-east-1"
-  source_ami    = "ami-0c4f7023847b90238" 
+  source_ami    = "ami-0c4f7023847b90238"
   ssh_username  = "ubuntu"
 
   tags = {
@@ -31,6 +31,8 @@ build {
       "cd /var/lib/tomcat9/webapps/",
       "sudo wget https://09jan2024.s3.amazonaws.com/ion.war",
       "sudo systemctl start tomcat9"
+
+
     ]
   }
 }
