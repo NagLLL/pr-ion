@@ -1,8 +1,8 @@
 source "amazon-ebs" "ubuntu" {
   ami_name      = "e2esa-aws-ubuntu"
   instance_type = "t2.micro"
-  region        = "ap-south-1"
-  source_ami    = "ami-03f4878755434977f" 
+  region        = "us-east-1"
+  source_ami    = "ami-0c4f7023847b90238" 
   ssh_username  = "ubuntu"
 
   tags = {
@@ -29,7 +29,7 @@ build {
       "sudo apt-get install tomcat9-admin tomcat9-common -y",
       "sudo apt-get install tomcat9 -y",
       "cd /var/lib/tomcat9/webapps/",
-      "sudo wget https://8jan2024-bucket.s3.amazonaws.com/ion.war",
+      "sudo wget https://09jan2024.s3.amazonaws.com/ion.war",
       "sudo systemctl start tomcat9"
     ]
   }
