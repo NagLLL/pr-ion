@@ -1,8 +1,8 @@
 source "amazon-ebs" "ubuntu" {
   ami_name      = "e2esa-aws-ubuntu"
   instance_type = "t2.micro"
-  region        = "us-west-2"
-  source_ami    = "ami-008fe2fc65df48dac"
+  region        = "ap-south-1"
+  source_ami    = "ami-0301b8cd09c36e35d" 
   ssh_username  = "ubuntu"
 
   tags = {
