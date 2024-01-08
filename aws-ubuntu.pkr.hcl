@@ -21,7 +21,6 @@ build {
 
   provisioner "shell" {
     inline = [
-      ssh_timeout = "20m"
       "echo Installing Tomcat",
       "sleep 30",
       "sudo apt-get update",
@@ -34,5 +33,6 @@ build {
       "sudo wget https://8jan2024-bucket.s3.amazonaws.com/ion.war",
       "sudo systemctl start tomcat9"
     ]
+    ssh_timeout = "20m"  # Set the SSH timeout outside the inline block
   }
 }
