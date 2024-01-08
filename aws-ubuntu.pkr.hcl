@@ -21,6 +21,7 @@ build {
 
   provisioner "shell" {
     inline = [
+      ssh_timeout = "20m"
       "echo Installing Tomcat",
       "sleep 30",
       "sudo apt-get update",
