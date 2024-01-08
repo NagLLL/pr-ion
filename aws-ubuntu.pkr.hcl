@@ -14,23 +14,21 @@ source "amazon-ebs" "ubuntu" {
 }
 
 build {
-  type    = "amazon-ebs"
-  vpc_id  = "vpc-05ce99dfef09616a6"
-  subnet_id = "subnet-066fa2fc7db12b07a"
-}
+  sources = ["source.amazon-ebs.ubuntu"]
 
-provisioner "shell" {
-  inline = [
-    "echo Installing Tomcat",
-    "sleep 30",
-    "sudo apt-get update",
-    "sudo apt-get upgrade -y",
-    "sudo apt-get install libtomcat9-java -y",
-    "sudo apt-get update",
-    "sudo apt-get install tomcat9-admin tomcat9-common -y",
-    "sudo apt-get install tomcat9 -y",
-    "cd /var/lib/tomcat9/webapps/",
-    "sudo wget https://8jan2024-bucket.s3.amazonaws.com/ion.war",
-    "sudo systemctl start tomcat9"
-  ]
+  provisioner "shell" {
+    inline = [
+      "echo Installing Tomcat",
+      "sleep 30",
+      "sudo apt-get update",
+      "sudo apt-get upgrade -y",
+      "sudo apt-get install libtomcat9-java -y",
+      "sudo apt-get update",
+      "sudo apt-get install tomcat9-admin tomcat9-common -y",
+      "sudo apt-get install tomcat9 -y",
+      "cd /var/lib/tomcat9/webapps/",
+      "sudo wget https://8jan2024-bucket.s3.amazonaws.com/ion.war",
+      "sudo systemctl start tomcat9"
+    ]
+  }
 }
